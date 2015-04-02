@@ -1,0 +1,112 @@
+<form class="form-horizontal"
+      name="productForm"
+      novalidate
+      ng-controller="ProductEditCtrl as vm">
+    <fieldset>
+        <legend>Basic Product Information</legend>
+        <div class="form-group"
+             ng-class="{'has-error':productForm.inputProductName.$invalid &&
+                                    productForm.inputProductName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputProductName">Product Name</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputProductName"
+                       name="inputProductName"
+                       type="text"
+                       placeholder="Product Name (required)"
+                       ng-model="vm.product.productName"
+                       required
+                       ng-minlength="4"
+                       ng-maxlength="12" />
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="productForm.inputProductName.$error.required">
+                    Product name is required.
+                </span>
+                <span ng-show="productForm.inputProductName.$error.minlength">
+                    Product name must be at least 4 characters in length.
+                </span>
+                <span ng-show="productForm.inputProductName.$error.maxlength">
+                    Product name cannot exceed 12 characters in length.
+                </span>
+            </span>
+        </div>
+
+        <div class="form-group"
+             ng-class="{'has-error':productForm.inputProductCode.$invalid &&
+                                    productForm.inputProductCode.$dirty}">
+            <label class="col-md-2 control-label" for="inputProductCode">Product Code</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputProductCode"
+                       name="inputProductCode"
+                       type="text"
+                       placeholder="Product Code (required)"
+                       ng-model="vm.product.productCode"
+                       required>
+            </div>
+            <span class="help-block has-error"
+                  ng-show="productForm.inputProductCode.$invalid ">
+                Product Code is required
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="inputAvailabilityDate">Availability</label>
+
+            <div class="col-md-4">
+                <div class="form-control">
+                    {{vm.product.releaseDate|date }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="inputDescription">Description</label>
+
+            <div class="col-md-10">
+                <textarea class="form-control"
+                          id="inputDescription"
+                          name="inputDescription"
+                          placeholder="Description"
+                          rows="3"
+                          ng-model="vm.product.description"></textarea>
+            </div>
+            <br />
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary"
+                            style="width:80px;margin-right:10px"
+                            ng-click="vm.submit()"
+                            ng-disabled="productForm.$invalid">
+                        Save
+                    </button>
+                </span>
+                <span>
+                    <button class="btn btn-default"
+                            style="width:70px"
+                            ng-click="vm.cancel(productForm)">
+                        Cancel
+                    </button>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group"
+             ng-show="vm.message">
+            <div class="col-md-6">
+                <pre style ="font: inherit">{{vm.message }}</pre>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
