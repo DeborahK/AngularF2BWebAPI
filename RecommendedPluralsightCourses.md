@@ -12,9 +12,14 @@ The following are recommended Pluralsight courses related to this course:
   - [REST Fundamentals] (http://www.pluralsight.com/courses/rest-fundamentals)
 
 * OData
+  - [Introduction to OData] (http://www.pluralsight.com/courses/odata-introduction)
   - [Building ASP.NET Web API OData Services] (http://www.pluralsight.com/courses/aspnetwebapi-odata)
   
-  
+* Security
+  - [AngularJS Security Fundamentals] (http://www.pluralsight.com/courses/angularjs-security-fundamentals)
+  - [Building and Securing a RESTful API for Multiple Clients in ASP.NET] (http://www.pluralsight.com/courses/building-securing-restful-api-aspdotnet)
+  - [Web API v2 Security] (http://www.pluralsight.com/courses/webapi-v2-security)
+
 * For LINQ
   - [Practical LINQ] (http://www.pluralsight.com/courses/practical-linq)
 
